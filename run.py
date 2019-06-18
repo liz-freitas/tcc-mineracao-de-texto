@@ -77,7 +77,7 @@ def dividir_base(dados):
 
     return treino, validacao
 
-#Função que treina o modelo
+#Função que treina o modelo Doc2Vec
 def treinar_modelo(tagged_data):
     max_epochs = 1000 #Número de iterações sobre o corpus.
     vec_size = 500 # Dimensionalidade dos vetores de recursos.
@@ -90,7 +90,7 @@ def treinar_modelo(tagged_data):
                     window = 20,
                     dm =1) #Define o algoritmo de treinamento. Se dm = 1 , 'memória distribuída' (PV-DM) é usada. Caso contrário, o pacote distribuído de palavras (PV-DBOW) é empregado.
 
-    # Constroe o vocabulário
+    # Constroi o vocabulário
     model.build_vocab(tagged_data)
 
     # Faz o treinamento da rede neural
