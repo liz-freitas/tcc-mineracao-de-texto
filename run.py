@@ -35,7 +35,7 @@ def tratar_texto(arq):
         # Remove os espaços, tabulações e quebras de linha
         frase = frase.strip()
 
-        # Verifica se linha está vazia, caso não realiza o proocessamento do texto
+        # Verifica se linha está vazia, caso não, realiza o proocessamento do texto
         if frase != '':
             # print(' Frase:  ' + str(frase))
 
@@ -110,8 +110,7 @@ def treinar_modelo(tagged_data):
 def gerar_vetor(model, wordVector):
     return model.infer_vector(wordVector, steps=1000, alpha=0.01)
 
-# ---- fazer uma função para cada classificador a ser utlizado ----
-#Função que gera os classificadores 
+# ---- Função que gera os classificadores ----
 def gerar_classificador_reg_logistica(model, suicidas, nao_suicidas):
     # Mesclando tabelas de validação
     array =  [[gerar_vetor(model, suicida), 1] for suicida in suicidas]
